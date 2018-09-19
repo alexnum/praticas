@@ -1,3 +1,5 @@
+const si = require('systeminformation');
+
 module.exports = {
 
 
@@ -28,9 +30,10 @@ module.exports = {
     if (this.req.me) {
       throw {redirect:'/welcome'};
     }
-
-    return exits.success({tst: 'olar'});
-
+    var current = await si.currentLoad();
+    var cpuUsage = current.currentload || current.load;
+    console.log(JSON.stringify(cpuUsage));
+    return exits.success({cpuUsage});
   }
 
 
