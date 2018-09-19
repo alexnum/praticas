@@ -1,0 +1,45 @@
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="container">
+    <ul class="nav nav-tabs">
+
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#menu1">Menu 1</a>
+        </li>
+        <% for(var i=2; i<6; i++) {%>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#menu<%=i%>">Menu <%=i%></a>
+            </li>
+        <% } %>
+      </ul>
+      
+      <div class="container-fluid">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade show active" id="menu1">
+              <div class="">Todo1</div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="menu2">
+              <div class="">Todo2</div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="menu3">
+              <div class="">Todo3</div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="menu4">
+              <div class="">Todo4</div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="menu5">
+              <div class="">Todo5</div>
+          </div>
+
+        </div>
+      </div>  
+</div>
+      
+
+</body>
