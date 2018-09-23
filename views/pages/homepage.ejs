@@ -17,12 +17,11 @@
       </ul>
       
       <div class="container-fluid">
-        <div class="tab-content" style="margin-top:10px">
-          <div role="tabpanel" class="tab-pane fade show active" id="menu0">
-              <div class="">ECS</div>
-          </div>
-          <div role="tabpanel" class="tab-pane fade show" id="menu1">
-              <div class="">AS</div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade show active" id="menu1">
+              <div class="">Uso de CPU: <%= cpuUsage %></div>
+              <button onclick="$.ajax({url: '/api/ecs/increase'})">AUMENTAR</button>
+              <button onclick="$.ajax({url: '/api/ecs/decrease'})">DIMINUIR</button>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="menu2">
               <div class="">EVS</div>
@@ -37,7 +36,12 @@
               <div class="">OBS</div>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="menu6">
-              <div class="">SFS</div>
+              <div class="">
+                <form action="/api/sfs/upload" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file"><br>
+                    <input type="submit" value="Upload">
+                </form>
+              </div>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="menu7">
               <div class="">VPC</div>

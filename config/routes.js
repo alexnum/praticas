@@ -17,8 +17,10 @@ module.exports.routes = {
   'GET /':                   { action: 'view-homepage-or-redirect' },
   'GET /welcome':            { action: 'dashboard/view-welcome' },
 
-  'GET /api/ec2/increase':       { controller: 'ecs', action: 'increase' },
-  'GET /api/ec2/decrease':       { controller: 'ecs', action: 'decrease' },
+  'GET /api/ecs/increase':       { controller: 'ecs', action: 'increase' },
+  'GET /api/ecs/decrease':       { controller: 'ecs', action: 'decrease' },
+
+  'POST /api/sfs/upload':       { controller: 'sfs', action: 'upload' },
 
   'GET /faq':                { view:   'pages/faq' },
   'GET /legal/terms':        { view:   'pages/legal/terms' },

@@ -21,5 +21,14 @@ module.exports = {
         LOAD-=20;
         updateLoad();
         res.status(200).send();
+    },
+    upp: function(req, res){
+        req.file('file').upload({
+            dirname: 'C:/Users/Pichau/Documents/RIFT'
+            //dirname: '/home/linux/sfs'
+        }, function (err) {
+            if (err) return res.status(500).send(err);
+            return res.status(200).send();
+        });
     }
 }
